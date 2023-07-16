@@ -17,6 +17,14 @@ Array.prototype.oReduce = function (cb, initialValue) {
     return output;
 };
 
-let array = [1, 2, 3, 4, 5];
-let result = array.oReduce((acc, next) => +acc + next, [0]);
-console.log(result)
+Array.prototype.mReduce = function(cb, initialValue = 0) {
+    let total = initialValue
+    for(let i = 0; i<this.length; i++) {
+         if (total !== undefined) {
+          total = cb.call(undefined, total, this[i], i, this);
+         } else {
+          total = this[i];
+         }
+    }
+    return total;
+}
