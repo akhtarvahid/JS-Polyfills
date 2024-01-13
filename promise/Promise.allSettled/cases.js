@@ -9,5 +9,5 @@ let promise3 = new Promise((resolve, reject) => {
 let promise4 = 40;
 
 Promise.myAllSettled([promise1, promise2, promise3, promise4])
-.then(values => values.forEach(val => console.log(val)))
-.catch(err=> console.log(err))
+    .then(values => values.forEach(val => console.log(val)))
+    .catch(err => console.log(err))

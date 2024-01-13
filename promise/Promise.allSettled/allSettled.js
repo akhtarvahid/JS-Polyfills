@@ -12,12 +12,12 @@ Promise.myAllSettled = function (promises) {
         let output = [], counter = 0;
         for (let [key, promise] of promises.entries()) {
             Promise.resolve(promise).then(response => {
-                output[key] = {status: 'fulfilled', value: response};
+                output[key] = { status: 'fulfilled', value: response };
             }).catch(err => {
-                output[key] = {status: 'rejected', reason: err};
+                output[key] = { status: 'rejected', reason: err };
             }).finally(() => {
                 counter++;
-                  if (counter === promises.length) {
+                if (counter === promises.length) {
                     resolve(output);
                 }
             })

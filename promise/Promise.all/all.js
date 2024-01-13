@@ -9,7 +9,7 @@ Promise.myAll = function (promises) {
     }
     return new Promise((resolve, reject) => {
         let output = [], counter = 0;
-        for (let i=0; i<promises.length; i++) {
+        for (let i = 0; i < promises.length; i++) {
             Promise.resolve(promises[i]).then(response => {
                 output[i] = response;
                 counter++;
